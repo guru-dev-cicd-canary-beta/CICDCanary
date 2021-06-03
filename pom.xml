@@ -3,7 +3,7 @@
   <groupId>sample-applications</groupId>
   <artifactId>canary-sample-data</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>canary-sample-data</name>
+  <name>xxz-sample-ddata</name>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
