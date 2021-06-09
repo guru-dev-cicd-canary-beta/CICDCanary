@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          
+
       # name: Configure AWS Credentials ECR
       #  uses: aws-actions/configure-aws-credentials@v1
       #  if: ${{ always() }}
@@ -48,7 +48,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: REGION_PLACEHOLDER
+          aws-region: us-west-2
 
       - name: Checkout the CodeGuru Reviewer Action repository
         uses: actions/checkout@v2
@@ -63,10 +63,10 @@ jobs:
         uses: ./.github/vijejain/cicd-actions-bugbash
         if: ${{ always() }}
         with:
-          name: REPOSITORY_NAME_PLACEHOLDER
+          name: testBuildJars
           source_path: .
           build_path: buildFiles
-          s3_bucket: BUCKET_NAME_PLACEHOLDER
+          s3_bucket: codeguru-reviewer-github-canary-beta-us-west-2
 
       - name: Upload review result
         if: ${{ always() }}
@@ -78,7 +78,7 @@ jobs:
       #  uses: ./.github/actions/action.yml
       #  if: ${{ always() }}
       #  with:
-      #    name: REPOSITORY_NAME_PLACEHOLDER
+      #    name: cicd-canary-beta-us-west-2-1623257807237
       #    source_path: .
       #    build_path: target
-      #    s3_bucket: BUCKET_NAME_PLACEHOLDER
+      #    s3_bucket: codeguru-reviewer-github-canary-beta-us-west-2
